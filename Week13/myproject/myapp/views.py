@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from myapp.forms import CustomerForm
-from myapp.models import Customer
+from myapp.models import Customer, Item
 from django.shortcuts import get_object_or_404, redirect
+from django.views.generic import ListView
 
 # Create your views here.
 def home(request):
@@ -23,3 +24,8 @@ def profile(request):
               'user':request.user
               }
     return render(request, 'profile.html', context)
+
+class ItemListView(ListView):
+    model = Item
+    paginate_by = 3
+    template_name = 'item_list.html'
