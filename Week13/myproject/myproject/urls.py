@@ -23,5 +23,7 @@ from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home')
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', views.home, name='home'),
+    path('profile/', views.profile, name='profile')
+]
+#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
