@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="uk-child-width1-2@s uk-grid-match" uk-grid></div>
+<h3 class="uk-card-title">{{user}}'s Shopping Cart</h3>
+<p>Type  -  Amount </p>
+{% for i in object_list%}
+    <div class="uk-card uk-card-primary uk-card-hover uk-card-body"> 
+        
+        <p>{{i.item}}  -  {{i.quantity}} </p>
+    </div>
+{% endfor %}
+<button class="uk-button uk-button-default">Check out</button>
+</div>
+{% endblock %}

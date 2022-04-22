@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from myapp.forms import CustomerForm
-from myapp.models import Customer, Item
+from myapp.models import Customer, Item, Invoice, OrderItem
 from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import ListView
 
@@ -29,3 +29,8 @@ class ItemListView(ListView):
     model = Item
     paginate_by = 3
     template_name = 'item_list.html'
+
+class InvoiceListView(ListView):
+    model = OrderItem
+    paginate_by = 3
+    template_name = 'order_item.html'
